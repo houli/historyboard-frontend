@@ -1,0 +1,7 @@
+<p>Displaying theme: {{theme.title}}</p>
+<p>Subthemes for theme: {{theme.id}}</p>
+<ul>
+  <li ng-repeat="subtheme in theme.subthemes">
+    <a ng-href="#/subthemes/{{subtheme.id}}">id: {{subtheme.id}}</a> title: {{subtheme.title}}
+  </li>
+</ul>
