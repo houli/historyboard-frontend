@@ -3,6 +3,10 @@
 This is the repository for the history board frontend Angular application.
 
 ## Getting set up
+To get a local copy of this repository you will need to run the following:
+```bash
+$ git clone http://gitlab.scss.tcd.ie/group-project-2015/history-board_front-end.git
+```
 You'll need to have a local web server running to use the application. This can be easily done if you have Python installed by navigating to the frontend project folder and running
 ```bash
 $ python -m SimpleHTTPServer
