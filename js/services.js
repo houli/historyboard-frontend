@@ -4,4 +4,7 @@ angular.module('historyBoard.services', [])
 }])
 .factory('Subtheme', ['$resource', function($resource) {
   return $resource('http://localhost:3000/subthemes/:id');
+}])
+.factory('Post', ['$resource', function($resource) {
+  return $resource('http://localhost:3000/posts/:id');
 }]);

@@ -5,3 +5,6 @@
     <a ng-href="#/subthemes/{{subtheme.id}}">id: {{subtheme.id}}</a> title: {{subtheme.title}}
   </li>
 </ul>
+<p>Add Subtheme:</p>
+Title:<input type="text" ng-model="title"></input>
+<input type="button" ng-click="createSubtheme()" value="Create subtheme">

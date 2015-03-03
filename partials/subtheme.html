@@ -3,5 +3,10 @@ Posts for subtheme: {{subtheme.title}}
   <li ng-repeat="post in subtheme.posts">
     Title: {{post.title}}<br>
     Description: {{post.description}}
+    <img ng-show="theme.image.url" ng-src="http://localhost:3000{{theme.image.url}}" />
   </li>  
 </ul>
+Title:<input type="text" ng-model="title"></input>
+Description:<input type="text" ng-model="description"></input>
+<input type="button" ng-file-select ng-model="file" accept="image/*" value="Select file">
+<input type="button" ng-click="createPost()" value="Create post">

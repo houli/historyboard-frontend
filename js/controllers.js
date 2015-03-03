@@ -22,18 +22,70 @@ angular.module('historyBoard.controllers', [])
       });
     }
   }
-
   getThemes();
 }])
-.controller('ThemeController', ['$scope', '$routeParams', 'Theme', function($scope, $routeParams, Theme) {
+.controller('ThemeController', ['$scope', '$routeParams', 'Theme', 'Subtheme', function($scope, $routeParams, Theme, Subtheme) {
   $scope.theme = Theme.get({id: $routeParams.id});
-}])
-.controller('SubthemesController', ['$scope', function($scope) {
 
+  $scope.createSubtheme = function() {
+    var newSub = new Subtheme({
+      subtheme: {
+        title: $scope.title,
+        theme_id: $scope.theme.id
+      }
+    });
+    $scope.theme.subthemes.push(newSub);
+    newSub.$save();
+  };
 }])
-.controller('SubthemeController', ['$scope', '$routeParams', 'Subtheme', function($scope, $routeParams, Subtheme) {
-  $scope.subtheme = Subtheme.get({id: $routeParams.id});
-}])
-.controller('PostsController', ['$scope', function($scope) {
+.controller ('SubthemesController', ['$scope', 'Subtheme', function($scope, Subtheme) {
 
+  var getSubthemes = function() {
+    $scope.subthemes = Subtheme.query();
+
+    $scope.createSubtheme = function() {
+      var newSub = new Subtheme({
+        subtheme: {
+          title: $scope.title,
+          theme_id: $scope.theme.id
+        }
+      });
+      $scope.theme.subthemes.push(newSub);
+      newSub.$save();
+    };
+  }
+  getSubthemes();
+}])
+.controller('SubthemeController', ['$scope', '$routeParams', '$upload', 'Subtheme', function($scope, $routeParams, $upload, Subtheme) {
+  var getSubtheme = function() {
+    $scope.subtheme = Subtheme.get({id: $routeParams.id});
+  };
+
+
+  // Needs proper validation and proper form
+  $scope.createPost = function() {
+    if ($scope.file) {
+      $upload.upload({
+        url: 'http://localhost:3000/posts',
+        fields: {
+          'post[description]': $scope.description,
+          'post[title]': $scope.title,
+          'post[subtheme_ids]': [$scope.subtheme.id]
+        },
+        file: $scope.file,
+        fileFormDataName: 'post[image]'
+      })
+      .success(function(reply, status, headers, config) {
+        getSubtheme();
+      });
+    }
+  };
+  getSubtheme();
+}])
+.controller('PostsController', ['$scope', '$upload', 'Post', function($scope, $upload, Post) {
+
+  var getPosts = function() {
+    $scope.posts = Post.query();
+  }
+  getPosts();
 }]);
