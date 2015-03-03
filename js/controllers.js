@@ -92,14 +92,14 @@ angular.module('historyBoard.controllers', [])
 .controller('PostController', ['$scope', '$routeParams', 'Post', 'Comment', function($scope, $routeParams, Post, Comment) {
   $scope.post = Post.get({id: $routeParams.id});
   // add validations
-  $scope.createComment = function(){
+  $scope.createComment = function() {
     var newCom = new Comment({
-        comment: {
-          post_id: $scope.post.id,
-          body: $scope.body
-        }
-      });
-      $scope.post.comments.push(newCom);
-      newCom.$save();
+      comment: {
+        post_id: $scope.post.id,
+        body: $scope.body
+      }
+    });
+    $scope.post.comments.push(newCom);
+    newCom.$save();
   };
 }]);
