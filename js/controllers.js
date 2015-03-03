@@ -42,18 +42,18 @@ angular.module('historyBoard.controllers', [])
 
   var getSubthemes = function() {
     $scope.subthemes = Subtheme.query();
+  };
 
-    $scope.createSubtheme = function() {
-      var newSub = new Subtheme({
-        subtheme: {
-          title: $scope.title,
-          theme_id: $scope.theme.id
-        }
-      });
-      $scope.theme.subthemes.push(newSub);
-      newSub.$save();
-    };
-  }
+  $scope.createSubtheme = function() {
+    var newSub = new Subtheme({
+      subtheme: {
+        title: $scope.title,
+        theme_id: $scope.theme.id
+      }
+    });
+    $scope.theme.subthemes.push(newSub);
+    newSub.$save();
+  };
   getSubthemes();
 }])
 .controller('SubthemeController', ['$scope', '$routeParams', '$upload', 'Subtheme', function($scope, $routeParams, $upload, Subtheme) {
