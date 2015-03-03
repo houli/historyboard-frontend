@@ -28,6 +28,10 @@ angular.module('historyBoard', [
     templateUrl: 'partials/posts.html',
     controller: 'PostsController'
   })
+  .when('/posts/:id', {
+    templateUrl: 'partials/post.html',
+    controller: 'PostController'
+  })
   .otherwise({
     redirectTo: '/'
   });

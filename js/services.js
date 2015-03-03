@@ -7,4 +7,7 @@ angular.module('historyBoard.services', [])
 }])
 .factory('Post', ['$resource', function($resource) {
   return $resource('http://localhost:3000/posts/:id');
+}])
+.factory('Comment', ['$resource', function($resource) {
+  return $resource('http://localhost:3000/comments/:id');
 }]);

@@ -1,0 +1,12 @@
+Title: {{post.title}}<br>
+Description: {{post.description}}
+<img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" />
+Comment:<input type="textarea" ng-model="body"></input>
+<input type="button" ng-click="createComment()" value="Post Comment">
+
+<ul>
+  <li ng-repeat="comment in post.comments">
+    Comment ID: {{comment.id}}<br>
+    Comment: {{comment.body}}
+  </li>  
+</ul>
