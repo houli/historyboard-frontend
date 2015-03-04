@@ -1,12 +1,23 @@
-Posts for subtheme: {{subtheme.title}}
-<ul>
-  <li ng-repeat="post in subtheme.posts">
-    Title: {{post.title}}<br>
-    Description: {{post.description}}
-    <a ng-href="/#/posts/{{post.id}}"><img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" /></a>
-  </li>  
-</ul>
-Title:<input type="text" ng-model="title"></input>
-Description:<input type="text" ng-model="description"></input>
-<input type="button" ng-file-select ng-model="file" accept="image/*" value="Select file">
+Posts for subtheme: {{subtheme.title}}<br><br>
+
+<table id="themesTable" cellpadding=5>
+  <tbody>
+    <tr>
+      <td>Image</td>
+      <td>Post Title</td>
+      <td>Description</td>
+    </tr>
+    <tr ng-repeat="post in subtheme.posts" >
+      <td><a ng-href="/#/posts/{{post.id}}"><img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" class="img-thumbnail" /></a></td>
+      <td class="themeBlock">{{post.title}}</td>
+      <td class="themeBlock">{{post.description}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+Create New Post:<br>
+Title:<input type="text" ng-model="title"></input><br>
+Description:<input type="text" ng-model="description"></input><br>
+<input type="button" ng-file-select ng-model="file" accept="image/*" value="Select post image">
 <input type="button" ng-click="createPost()" value="Create post">

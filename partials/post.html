@@ -1,12 +1,15 @@
 Title: {{post.title}}<br>
-Description: {{post.description}}
-<img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" />
-Comment:<input type="textarea" ng-model="body"></input>
+Description: {{post.description}}<br>
+<img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" class="img-thumbnail" /> <!--This may not need to be a thumbnail-->
+
+<br><br>
+Post New Comment:<br><input type="textarea" ng-model="body"></input>
 <input type="button" ng-click="createComment()" value="Post Comment">
 
+<br><br>
+Previous Comments:
 <ul>
   <li ng-repeat="comment in post.comments">
-    Comment ID: {{comment.id}}<br>
-    Comment: {{comment.body}}
+    Comment: id={{comment.id}}: {{comment.body}}
   </li>  
 </ul>

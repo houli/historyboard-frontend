@@ -1,11 +1,23 @@
-<p>Displaying themes</p>
-<ul>
-  <li ng-repeat="theme in themes">
-    <a ng-href="/#/themes/{{theme.id}}">id: {{theme.id}}</a> title: {{theme.title}} description: {{theme.description}}
-    <img ng-show="theme.image.url" ng-src="http://localhost:3000{{theme.image.url}}" />
-  </li>
-</ul>
-Title:<input type="text" ng-model="title"></input>
-Description:<input type="text" ng-model="description"></input>
-<input type="button" ng-file-select ng-model="file" accept="image/*" value="Select file">
+<p >Displaying themes</p>
+<table id="themesTable" cellpadding=5>
+  <tbody>
+    <tr>
+      <td>Image</td>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Description</td>
+    </tr>
+    <tr ng-repeat="theme in themes" >
+      <td><a ng-href="/#/themes/{{theme.id}}"><img ng-show="theme.image.url" ng-src="http://localhost:3000{{theme.image.url}}" class="img-thumbnail"/></a></td>
+      <td><a ng-href="/#/themes/{{theme.id}}">{{theme.id}}</a></td>
+      <td class="themeBlock">{{theme.title}} </td>
+      <td class="themeBlock">{{theme.description}}</td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+Add new theme:<br>
+Title:<input type="text" ng-model="title"></input><br>
+Description:<input type="text" ng-model="description"></input><br>
+<input type="button" ng-file-select ng-model="file" accept="image/*" value="Select cover image">
 <input type="button" ng-click="createTheme()" value="Create theme">
