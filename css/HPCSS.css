@@ -1,0 +1,350 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+.container{
+ /* background-color:#e4eaed;*/
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+    margin-bottom:150px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #adadad;
+    left:50%
+	position: fixed;
+
+}
+#homebutton a{   
+    text-decoration: none;
+    color:white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color:#6495ed;
+    margin-left: 1%;
+}
+/*
+.homebutton img	{ background-color: white; }
+.homebutton img:hover	{ background-color: grey; }*/
+#homebutton a:hover	{ background-color: #4169e1; }
+
+header{
+    z-index: 1;
+    display: block;
+    font-family:Arial;
+    text-align: left;
+    margin-left: 200px;
+    margin-top: 68px;
+    font-size: 70px;
+    color: white;
+    opacity:1;
+     text-shadow: 0px -3px 0px #333,
+                  0px 3px 3px #666;
+}
+header p{
+    margin:20px;   
+}
+
+#headerBox{
+    z-index:-1;
+    margin-top: -100px;
+    padding-bottom: -100px;
+    padding-right:218px;
+    background-repeat: no-repeat;
+   background-position: center;
+   
+   background-image: url(http://dublincity.ie/sites/default/files/content//RecreationandCulture/DecadeofCommemorations/DecadeofCommemorations/PublishingImages/Sml_Lrg_Images/GPO_Ruins,%201916_800.jpg);
+   border: 1px solid #666;
+   height: 26em;
+    width: 70em;
+     background-size: cover;
+    opacity: 0.75;
+}
+.search{
+    /*position:relative;*/
+    z-index:2;
+    font-size: 25px; 
+    margin-top:-198px;
+    margin-right:-100px;
+    text-align:right;
+    line-height: 0px; 
+    font-family:Lato, Arial, Helvetica; 
+}
+.search input{
+    width:300px;
+    height:70px;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    border-bottom:5px solid #6495ed;
+    background-color: transparent;
+    opacity:1;  
+    font-size: 35px; 
+    text-align:left;
+    line-height: 0px; 
+    font-family:Lato,Arial, Helvetica;
+     text-shadow: 0px -3px 0px #333,
+                  0px 3px 3px #666;
+}
+input[type="submit"] {
+  height: 67px;
+  width: 63px;
+  display: inline;
+  color:red;
+  float: right;
+  background: url(https://cdn0.iconfinder.com/data/icons/huge-black-icons/256/Zoom.png) center center no-repeat;
+    background-size: contain;
+  text-indent: -10000px;
+  border: none;
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-top:10px;
+  margin-left:0px;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity .4s ease;
+}
+input[type="submit"]:hover {
+  opacity: 1;
+}
+input[type="text"] {
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+    font-size: 30px; 
+   padding-top:20px;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+ font-size: 30px; 
+   padding-top:20px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+    font-size: 35px; 
+    padding:20px 20px 20px 20px;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    white;
+  font-size: 30px; 
+   padding-top:20px;
+    
+}
+/*.backgroundImage{
+  z-index: 10;
+  position: fixed;
+  background-size: cover;
+  opacity: 0.5;
+  
+}
+*/
+#catTitle{
+   display: block;
+    font-family:Arial;
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    font-size: 50px;
+    color: #6495ed;
+}
+
+.
+/.form{
+    z-index: 2;
+	background:#e4eaed; width:470px; margin:left;margin-left: 100px; padding-left:50px; padding-top:20px;padding-bottom:10px;margin-top: 100px;
+}
+.form fieldset{border:0px; padding:0px; margin:0px;}
+.form p.contact { font-size: 12px; margin:0px 0px 10px 0;line-height: 14px; font-family:Arial, Helvetica;}
+
+.form input[type="text"] { width: 400px; }
+.form input[type="email"] { width: 400px; }
+.form input[type="password"] { width: 400px; }
+
+.form input, textarea { background-color: rgba(255, 255, 255, 0.4); border: 1px solid rgba(122, 192, 0, 0.15); padding: 7px; font-family: Keffeesatz, Arial; color: #4b4b4b; font-size: 14px; -webkit-border-radius: 5px; margin-bottom: 15px; margin-top: -10px; }
+.form input:focus, textarea:focus { border: 1px solid #c0cbd1; background-color: rgba(255, 255, 255, 1); }
+.form .select-style {
+      -webkit-appearance: button;
+      -webkit-border-radius: 2px;
+      -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      -webkit-padding-end: 20px;
+      -webkit-padding-start: 2px;
+      -webkit-user-select: none;
+      background-image: url(images/select-arrow.png), 
+        -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+      background-position: center right;
+      background-repeat: no-repeat;
+      border: 0px solid #FFF;
+      color: #555;
+      font-size: inherit;
+      margin: 0;
+      overflow: hidden;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+.form input.buttom{ 
+    margin-top: 10px;
+    margin-left: 270px;
+    background: #6495ed; 
+    display: inline; 
+    color: #fbf7f7; 
+    text-decoration: none;
+    text-align: left;
+    font-weight: bold; 
+    line-height: 1; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border-radius: 5px; 
+    -moz-box-shadow: 0 1px 3px #999; 
+    -webkit-box-shadow: 0 1px 3px #999; 
+    box-shadow: 0 1px 3px #999; 
+    border: none; 
+    position: relative; 
+    cursor: pointer; 
+    font-size: 14px; 
+    text-align: center;
+    left:-270px;
+    padding-right:125px;
+    padding-left: 125px;
+    font-family:Arial, Geneva, sans-serif;
+    }
+.form input.buttom:hover	{ background-color: #4169e1; }
+
+.topButton{
+    text-decoration: none;
+    display:inline;
+    border: none;
+    margin-left: 7.5%;
+    margin-top:10%;
+    font-family:Arial;
+    text-align: center;
+    font-size: 20px;
+    color: #636363;
+}
+#signup a{  
+    text-decoration: none;
+    color:white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color:#6495ed;
+    margin-left: -7%;
+}
+#signup a:hover	{ background-color: #4169e1; }
+
+#signIN a{
+    text-decoration: none;
+    display:inline;
+    border: none;
+    margin-left:200px;
+    font-family:Arial;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+#signIN a:hover	{ color: #8b8989; }
+
+#imageBG{
+    position:block;
+    left:750px;
+    margin-top:0px;
+    border: 40px solid #e4eaed;
+}
+.smallReg a{
+    text-decoration: none;
+    color: #4169e1;
+    font-weight:700;
+    
+}
+.smallReg{
+    text-decoration: none;
+    display:inline;
+    border: none;
+    font-family:Arial;
+    text-align: center;
+    font-size: 12px;
+    color: black;
+}
+.categories{
+    display:inline-block;
+    height: 300px;
+    width:230px;
+    margin:15px;
+     border: 1px solid #666;
+
+}
+.categories p{
+   font-size:26px;
+    font-family:Arial;
+    text-align: center;
+    margin-top:120px;
+    color:white;
+    text-shadow: 0px -3px 0px #333,
+                  0px 3px 3px #666;
+    
+}
+#agriculture{
+     margin-left:270px;
+    background-repeat: no-repeat;
+   background-position: center;
+   background-image: url(http://thumbs.dreamstime.com/x/wheat-black-white-317719.jpg);
+  
+  /* height: 10em;
+    width: 10em;
+     background-size:contain;
+    opacity: 0.75; ;   */
+}
+#sport{
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url(http://m0.joe.ie/wp-content/uploads/2014/09/Croker1.jpg);
+  
+  /* height: 10em;
+    width: 10em;
+     background-size:contain;
+    opacity: 0.75; 
+    */
+}
+#family{
+     background-repeat: no-repeat;
+   background-position: center;
+   background-image: url(http://quod.lib.umich.edu/m/mqrg/images/05404_02-ic.jpg);
+ 
+    
+}
+#architecture{
+     margin-left: 270px;
+      background-repeat: no-repeat;
+   background-position: center;
+   background-image: url(http://1.bp.blogspot.com/-v7LQb55ut9I/T05QLp3u1II/AAAAAAAABvk/BQdsCfXa5Uk/s640/E+and+Sixth+streets+N.W.+.jpg);
+}
+#work{
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url(http://www.stewartstrathern.pitt.edu/scotland_ireland/photogallery/large/scot_16.jpg);   
+}
+#leisure{
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url(http://www.charterworld.com/news/wp-content/uploads/2010/07/Racing-yacht-JETHOU-sailing-%E2%80%93-Photo-credit-by-Rolex-Kurt-Arrigo.jpg);
+}
+.final{    
+    font-family:Arial;
+    margin:100px 0px 50px 40px;
+    font-weight: bold;
+    text-align: left;
+    font-size:24px;
+    color: #6495ed;
+}
+.final p{
+    margin:7px;
+}
