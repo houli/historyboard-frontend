@@ -11,6 +11,7 @@ Posts for subtheme: {{subtheme.title}}<br><br>
       <td><a ng-href="/#/posts/{{post.id}}"><img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" class="img-thumbnail" /></a></td>
       <td class="themeBlock">{{post.title}}</td>
       <td class="themeBlock">{{post.description}}</td>
+      <td class="themeBlock">{{post.all_tags}}</td>
     </tr>
   </tbody>
 </table>
@@ -19,5 +20,7 @@ Posts for subtheme: {{subtheme.title}}<br><br>
 Create New Post:<br>
 Title:<input type="text" ng-model="title"></input><br>
 Description:<input type="text" ng-model="description"></input><br>
+Tags:<input type="text" ng-model="all_tags"></input><br>
 <input type="button" ng-file-select ng-model="file" accept="image/*" value="Select post image">
 <input type="button" ng-click="createPost()" value="Create post">
+

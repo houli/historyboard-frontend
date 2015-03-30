@@ -18,6 +18,9 @@ Search:<input ng-model="query" type="text"/>
 
 <br>
 Create New Post:<br>
+<select ng-model="subtheme_sel" ng-options="subtheme.id as subtheme.title for subtheme in subthemes">
+</select><br>
+
 Title:<input type="text" ng-model="title"></input><br>
 Description:<input type="text" ng-model="description"></input><br>
 Tags:<input type="text" ng-model="all_tags"></input><br>

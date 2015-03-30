@@ -82,12 +82,37 @@ angular.module('historyBoard.controllers', [])
   };
   getSubtheme();
 }])
-.controller('PostsController', ['$scope', '$upload', 'Post', function($scope, $upload, Post) {
+.controller('PostsController', ['$scope', '$upload', '$http', 'Post', function($scope, $upload, $http, Post) {
+  $scope.subtheme_sel = null;
+    $scope.subthemes = [];
+    $http.get('http://localhost:3000/subthemes.json').success(function (result) {
+        $scope.subthemes = result;
+    });
 
   var getPosts = function() {
     $scope.posts = Post.query();
   }
   getPosts();
+
+  $scope.createPost = function() {
+    if ($scope.file) {
+      $upload.upload({
+        url: 'http://localhost:3000/posts',
+        fields: {
+          'post[description]': $scope.description,
+          'post[title]': $scope.title,
+          'post[subtheme_ids]': [$scope.subtheme_sel],
+          'post[all_tags]': $scope.all_tags
+        },
+        file: $scope.file,
+        fileFormDataName: 'post[image]'
+      })
+      .success(function(reply, status, headers, config) {
+        getPosts();
+      });
+    }
+  };
+
 }])
 .controller('PostController', ['$scope', '$routeParams', 'Post', 'Comment', function($scope, $routeParams, Post, Comment) {
   $scope.post = Post.get({id: $routeParams.id});
