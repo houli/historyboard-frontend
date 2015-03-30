@@ -70,7 +70,8 @@ angular.module('historyBoard.controllers', [])
         fields: {
           'post[description]': $scope.description,
           'post[title]': $scope.title,
-          'post[subtheme_ids]': [$scope.subtheme.id]
+          'post[subtheme_ids]': [$scope.subtheme.id],
+          'post[all_tags]' : $scope.all_tags
         },
         file: $scope.file,
         fileFormDataName: 'post[image]'

@@ -6,6 +6,7 @@ Search:<input ng-model="query" type="text"/>
       <td>Image</td>
       <td>Post Title</td>
       <td>Description</td>
+      <td>Tags</td>
     </tr>
     <tr ng-repeat="post in posts | filter:query" >
       <td><a ng-href="/#/posts/{{post.id}}"><img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" class="img-thumbnail" /></a></td>
