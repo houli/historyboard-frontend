@@ -1,0 +1,15 @@
+{
+  "name": "history-board",
+  "version": "1.0.0",
+  "description": "History Board front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.scss.tcd.ie:group-project-2015/history-board_front-end.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "history-board",
+  "version": "1.0.0",
+  "authors": [
+    "Eoin Houlihan <ehoulih@tcd.ie>"
+  ],
+  "description": "History Board front end",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
