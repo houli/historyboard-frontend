@@ -5,6 +5,7 @@ var minifyCSS = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var templateCache = require('gulp-angular-templatecache');
 var del = require('del');
+var vinylPaths = require('vinyl-paths');
 
 gulp.task('styles', function() {
   return gulp.src([
@@ -42,7 +43,14 @@ gulp.task('scripts', ['templates'], function() {
 });
 
 gulp.task('build-scripts', ['scripts'], function(cb) {
-  del(['tmp']);
+  return gulp.src('tmp')
+  .pipe(vinylPaths(del));
 });
+
+gulp.task('watch', function() {
+  gulp.watch('css/**/*.scss', ['styles']);
+  gulp.watch('js/**/*.js', ['build-scripts']);
+  gulp.watch('partials/**/*.html', ['build-scripts']);
+})
 
 gulp.task('default', ['styles', 'build-scripts']);
