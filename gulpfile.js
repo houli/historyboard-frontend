@@ -4,7 +4,7 @@ var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var templateCache = require('gulp-angular-templatecache');
-var clean = require('gulp-clean');
+var del = require('del');
 
 gulp.task('styles', function() {
   return gulp.src([
@@ -41,9 +41,8 @@ gulp.task('scripts', ['templates'], function() {
   .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build-scripts', ['scripts'], function() {
-  return gulp.src('tmp', {read: false})
-  .pipe(clean());
+gulp.task('build-scripts', ['scripts'], function(cb) {
+  del(['tmp']);
 });
 
 gulp.task('default', ['styles', 'build-scripts']);
