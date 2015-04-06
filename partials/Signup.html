@@ -1,58 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>LogIn</title>
-    <link rel="stylesheet" type="text/css" href="stylishness.css" media="all" />
-</head>
-<body>
-  <!--<div class="backgroundImage"><img src="http://img.thesun.co.uk/multimedia/archive/01562/RSNE08SPP3---620g_1562364a.jpg"></div>-->
-<div class="container">
-    <div class="topButton" id="homebutton"><a href="http://www.myhome.ie/"> <strong>HOME</strong></a></div>
-  <div class="topButton"><strong>CATEGORIES</strong></div>
-  <div class="topButton"><strong>ABOUT</strong> </div>
-  <div class="topButton"><strong>EDUCATION</strong> </div>
-    <div class="topButton" id="signin">
-                  <a href="C:\Users\stephen\Documents\2. Programming Project 2\Login\login.html"><strong>SIGN IN</strong></a>
-              </div>
-   <p  id="signup"><strong>REGISTER</strong> </p>
-    
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Register for an account</h1>
+    <form name="signupForm" role="form" ng-submit="register(user)" novalidate>
+      <div class="form-group">
+        <label for="firstNameInput">First name</label>
+        <input type="text" ng-model="user.first_name" class="form-control" id="firstNameInput" placeholder="First name" required>
+      </div>
+      <div class="form-group">
+        <label for="lastNameInput">Last name</label>
+        <input type="text" ng-model="user.last_name" class="form-control" id="lastNameInput" placeholder="Last name" required>
+      </div>
+      <div class="form-group">
+        <label for="emailInput">Email address</label>
+        <input type="email" ng-model="user.email" class="form-control" id="emailInput" placeholder="Enter email address" required>
+      </div>
+      <div class="form-group">
+        <label for="passInput">Password</label>
+        <input type="password" ng-model="user.password" class="form-control" id="passInput" required>
+      </div>
+      <div class="form-group">
+        <label for="passConfirmInput">Confirm password</label>
+        <input type="password" ng-model="user.password_confirmation" class="form-control" id="passConfirmInput" required compare-to="user.password">
+      </div>
+      <button type="submit" class="btn btn-success" ng-disabled="signupForm.$invalid">Register</button>
+    </form>
+    <p>You will need to validate your account by opening the link in the email sent to you.</p>
   </div>
-			<header>
-				<h1>REGISTER</h1>
-            </header>       
-       <div  class="form">
-    		<form id="contactform"> 
-    			<p class="contact"><label for="name">Name</label></p> 
-    			<input id="name" name="name" placeholder="First and last name" required="" tabindex="1" type="text"> 
-    			 
-    			<p class="contact"><label for="email">Email</label></p> 
-    			<input id="email" name="email" placeholder="example@domain.com" required="" type="email"> 
-                
-                <p class="contact"><label for="username">Create a username</label></p> 
-    			<input id="username" name="username" placeholder="username" required="" tabindex="2" type="text"> 
-    			 
-                <p class="contact"><label for="password">Create a password</label></p> 
-    			<input type="password" id="password" name="password" required=""> 
-                <p class="contact"><label for="repassword">Confirm your password</label></p> 
-    			<input type="password" id="repassword" name="repassword" required=""> 
-    
-  
-            <select class="select-style gender" name="gender">
-            <option value="select">Gender</option>
-            <option value="m">Male</option>
-            <option value="f">Female</option>
-            <option value="others">Other</option>
-            </select><br><br>
-            
-         
-                <div class="smallReg">ALREADY HAVE AN ACCOUNT? <a href="C:\Users\stephen\Documents\2. Programming Project 2\Login\login.html"><span>SIGN IN</span></a></div>
-    
-                
-   </form> 
 </div>
-           <div id="imageBG" ><img src="http://media.irishcentral.com/images/MI+1916+Rising+GPO+Easter+rising.jpg" width="500px" height="390px"></div>
-      
-</div>
-
-</body>
-</html>

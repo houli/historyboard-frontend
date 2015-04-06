@@ -128,4 +128,15 @@ angular.module('historyBoard.controllers', [])
     $scope.post.comments.push(newCom);
     newCom.$save();
   };
+}])
+.controller('SignupController', ['$scope', '$auth', '$location', function($scope, $auth, $location) {
+  $scope.register = function(user) {
+    $auth.submitRegistration(user)
+    .then(function(resp) {
+      $location.path('/');
+    })
+    .catch(function(resp) {
+      // handle error response
+    });
+  };
 }]);

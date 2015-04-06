@@ -34,6 +34,8 @@ gulp.task('scripts', ['templates'], function() {
     'bower_components/angular-route/angular-route.js',
     'bower_components/angular-resource/angular-resource.js',
     'bower_components/ng-file-upload/angular-file-upload.js',
+    'bower_components/angular-cookie/angular-cookie.js',
+    'bower_components/ng-token-auth/dist/ng-token-auth.js',
     'js/**/*.js',
     'tmp/templates.js'
   ])
