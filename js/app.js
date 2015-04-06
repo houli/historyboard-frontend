@@ -3,7 +3,8 @@ angular.module('historyBoard', [
   'ngResource',
   'angularFileUpload',
   'historyBoard.services',
-  'historyBoard.controllers'
+  'historyBoard.controllers',
+  'templates'
 ])
 .config(['$routeProvider', function($routeProvider) {
   // Configure application routes
