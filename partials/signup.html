@@ -16,11 +16,11 @@
       </div>
       <div class="form-group">
         <label for="passInput">Password</label>
-        <input type="password" ng-model="user.password" class="form-control" id="passInput" required>
+        <input type="password" ng-model="user.password" class="form-control" id="passInput" ng-minlength="8" required>
       </div>
       <div class="form-group">
         <label for="passConfirmInput">Confirm password</label>
-        <input type="password" ng-model="user.password_confirmation" class="form-control" id="passConfirmInput" required compare-to="user.password">
+        <input type="password" ng-model="user.password_confirmation" class="form-control" id="passConfirmInput" ng-minlength="8" compare-to="user.password" required>
       </div>
       <button type="submit" class="btn btn-success" ng-disabled="signupForm.$invalid">Register</button>
     </form>
