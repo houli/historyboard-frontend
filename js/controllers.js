@@ -139,4 +139,18 @@ angular.module('historyBoard.controllers', [])
       // handle error response
     });
   };
+}])
+.controller('LoginController', ['$scope', '$auth', function($scope, $auth) {
+  $scope.login = function(user) {
+    $auth.submitLogin(user)
+    .then(function(resp) {
+      $location.path('/');
+    })
+    .catch(function(resp) {
+      // handle error response
+    });
+  };
+}])
+.controller('MainController', ['$scope', '$auth', function($scope, $auth) {
+  $auth.validateUser();
 }]);

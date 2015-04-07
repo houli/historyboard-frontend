@@ -43,6 +43,10 @@ angular.module('historyBoard', [
     templateUrl: 'partials/signup.html',
     controller: 'SignupController'
   })
+  .when('/login', {
+    templateUrl: 'partials/login.html',
+    controller: 'LoginController'
+  })
   .otherwise({
     redirectTo: '/'
   });
