@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
+var minifyHTML = require('gulp-minify-html');
 var sass = require('gulp-sass');
 var templateCache = require('gulp-angular-templatecache');
 var del = require('del');
@@ -23,6 +24,7 @@ gulp.task('styles', function() {
 
 gulp.task('templates', function() {
   return gulp.src('partials/**/*.html')
+  .pipe(minifyHTML({ empty: true }))
   .pipe(templateCache({ root: 'partials/', standalone: true }))
   .pipe(gulp.dest('tmp'));
 });
