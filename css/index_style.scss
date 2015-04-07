@@ -143,3 +143,32 @@ input.ng-invalid.ng-dirty {
 input.ng-valid.ng-dirty {
   border: 1px solid green;
 }
+
+.posts {
+  width: 50%;
+  height: 100px;
+  background-color: #f7f7f7;
+  border:4px solid #7f7f7f;
+  border-radius: 25px;
+
+}
+ .posts img {
+  max-width: 100%;
+  max-height: 100%;
+  height: 70px;
+  margin-left: 15px;
+  margin-top: 10px;
+  border:1px solid #FFFFFF;
+  border-radius: 15px;
+  float: left;
+ }
+ 
+ .post_title {
+  margin-left: 150px;
+  font-size: 20px;
+  margin-top: 15px;
+ }
+
+ .post_info {
+  margin-left: 150px;
+ }
