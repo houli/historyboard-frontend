@@ -46,7 +46,7 @@
   Create New Theme:
 </div>
 <div>
-  <form name="subthemeForm" role="form" ng-submit="createTheme()" novalidate>
+  <form name="themeForm" role="form" ng-submit="createTheme()" novalidate>
     <div class="form-group">
       <input type="text" ng-model="title" id="titleInput" class="form-control" placeholder="Theme Title" ng-minlength="3" ng-maxlength="128" required>
     </div>
@@ -54,7 +54,7 @@
       <input type="text" ng-model="description" id="descInput" class="form-control" placeholder="Theme Description" ng-minlength="3" ng-maxlength="128" required>
     </div>
     <div>
-      <button type="submit" class="btn btn-success" ng-disabled="subthemeForm.$invalid">Create Theme</button>
+      <button type="submit" class="btn btn-success" ng-disabled="themeForm.$invalid">Create Theme</button>
     </div>
   </form>
 </div>
