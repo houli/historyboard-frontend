@@ -153,6 +153,10 @@ angular.module('historyBoard.controllers', [])
     });
   };
 }])
-.controller('MainController', ['$scope', '$auth', function($scope, $auth) {
+.controller('MainController', ['$scope', '$auth', '$location', function($scope, $auth, $location) {
   $auth.validateUser();
+
+  $scope.$on('auth:email-confirmation-success', function(ev, user) {
+    $location.path('/');
+  });
 }]);
