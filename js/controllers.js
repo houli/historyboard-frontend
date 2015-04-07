@@ -56,7 +56,7 @@ angular.module('historyBoard.controllers', [])
   };
   getSubthemes();
 }])
-.controller('SubthemeController', ['$scope', '$routeParams', '$upload', 'Subtheme', function($scope, $routeParams, $upload, Subtheme) {
+.controller('SubthemeController', ['$scope', '$routeParams', '$upload', '$auth', 'Subtheme', function($scope, $routeParams, $upload, $auth, Subtheme) {
   var getSubtheme = function() {
     $scope.subtheme = Subtheme.get({id: $routeParams.id});
   };
@@ -74,7 +74,8 @@ angular.module('historyBoard.controllers', [])
           'post[all_tags]' : $scope.all_tags
         },
         file: $scope.file,
-        fileFormDataName: 'post[image]'
+        fileFormDataName: 'post[image]',
+        headers: $auth.retrieveData('auth_headers')
       })
       .success(function(reply, status, headers, config) {
         getSubtheme();
@@ -83,11 +84,11 @@ angular.module('historyBoard.controllers', [])
   };
   getSubtheme();
 }])
-.controller('PostsController', ['$scope', '$upload', '$http', 'Post', function($scope, $upload, $http, Post) {
+.controller('PostsController', ['$scope', '$upload', '$http', '$auth', 'Post', function($scope, $upload, $http, $auth, Post) {
   $scope.subtheme_sel = null;
     $scope.subthemes = [];
     $http.get('http://localhost:3000/subthemes.json').success(function (result) {
-        $scope.subthemes = result;
+      $scope.subthemes = result;
     });
 
   var getPosts = function() {
@@ -106,7 +107,8 @@ angular.module('historyBoard.controllers', [])
           'post[all_tags]': $scope.all_tags
         },
         file: $scope.file,
-        fileFormDataName: 'post[image]'
+        fileFormDataName: 'post[image]',
+        headers: $auth.retrieveData('auth_headers')
       })
       .success(function(reply, status, headers, config) {
         getPosts();
@@ -128,4 +130,33 @@ angular.module('historyBoard.controllers', [])
     $scope.post.comments.push(newCom);
     newCom.$save();
   };
+}])
+.controller('SignupController', ['$scope', '$auth', '$location', function($scope, $auth, $location) {
+  $scope.register = function(user) {
+    $auth.submitRegistration(user)
+    .then(function(resp) {
+      $location.path('/');
+    })
+    .catch(function(resp) {
+      // handle error response
+    });
+  };
+}])
+.controller('LoginController', ['$scope', '$auth', function($scope, $auth) {
+  $scope.login = function(user) {
+    $auth.submitLogin(user)
+    .then(function(resp) {
+      $location.path('/');
+    })
+    .catch(function(resp) {
+      // handle error response
+    });
+  };
+}])
+.controller('MainController', ['$scope', '$auth', '$location', function($scope, $auth, $location) {
+  $auth.validateUser();
+
+  $scope.$on('auth:email-confirmation-success', function(ev, user) {
+    $location.path('/');
+  });
 }]);
