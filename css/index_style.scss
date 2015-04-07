@@ -54,18 +54,79 @@ body { padding-top: 70px; }
   margin-right: auto;
 }
 
-.article_box {
-  background-image: url(../img/gplaypattern.png);
+.navbar-right li {
+  margin-right: 10px;
 }
 
-.article_box h1 {
+.article_box {
+  width: 55%;
+  border: 5px;
+  border-color: #4694ff;
+  float: left;
+  margin-left: 70px
+}
+
+.article_box img {
+  max-height: 100%;
+  max-width: 100%;
+  border:4px solid #4694ff;
+  border-radius: 25px;
+}
+
+.description {
+  background-color: #f7f7f7;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  border:4px solid #4694ff;
+  border-radius: 25px;
   color: #4694ff;
 }
 
-.comment_box {
-  background-image: url(../img/gplaypattern.png);
+.description h2 {
+  color: #000;
+  margin-left: 10px;
+  margin-bottom: 20px
+}
+
+.article_box .input-group {
+  margin-bottom: 20px;
+}
+
+.tag_box {
+  background-color: #f7f7f7;
+  width: 20%;
+  float: right;
+  margin-right: 100px;
+  border:4px solid #4694ff;
+  border-radius: 25px;
+}
+
+.tag_box h1{
+  text-align: center;
+  color: #4694ff;
+}
+
+.tag_box ul {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 .navbar-right li {
   margin-right: 10px;
 }
+
+.pager li {
+  margin-right: 10px; 
+}
+
+.comment_box {
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+.comment_box .pager {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
