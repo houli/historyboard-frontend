@@ -36,6 +36,7 @@ angular.module('historyBoard.controllers', [])
     });
     $scope.theme.subthemes.push(newSub);
     newSub.$save();
+    $scope.title = "";
   };
 }])
 .controller ('SubthemesController', ['$scope', 'Subtheme', function($scope, Subtheme) {
@@ -53,6 +54,7 @@ angular.module('historyBoard.controllers', [])
     });
     $scope.theme.subthemes.push(newSub);
     newSub.$save();
+    $scope.title = "";
   };
   getSubthemes();
 }])
@@ -79,6 +81,10 @@ angular.module('historyBoard.controllers', [])
       })
       .success(function(reply, status, headers, config) {
         getSubtheme();
+        $scope.file = null;
+        $scope.description = "";
+        $scope.title = "";
+        $scope.all_tags = "";
       });
     }
   };
@@ -112,6 +118,10 @@ angular.module('historyBoard.controllers', [])
       })
       .success(function(reply, status, headers, config) {
         getPosts();
+        $scope.file = null;
+        $scope.description = "";
+        $scope.title = "";
+        $scope.all_tags = "";
       });
     }
   };
@@ -129,6 +139,7 @@ angular.module('historyBoard.controllers', [])
     });
     $scope.post.comments.push(newCom);
     newCom.$save();
+    $scope.body = "";
   };
 }])
 .controller('SignupController', ['$scope', '$auth', '$location', function($scope, $auth, $location) {
