@@ -23,6 +23,10 @@ Run Bower
 ```bash
 $ bower install
 ```
+Install node modules
+```bash
+$ npm install
+```
 Run gulp
 ```bash
 $ gulp
@@ -46,6 +50,6 @@ You can then go http://localhost:8000 to see the frontend application.
 ## Structure
 All declarations of CSS and JavaScript should go in the `index.html` file. HTML templates go in the `partials` directory.
 
-JavaScript files go in the `js` directory and any third-party JavaScript libraries should go in the `js/vendor` directory.
+JavaScript files go in the `js` directory and any third-party JavaScript libraries should be installed via bower.
 
-CSS files go in the `css` directory and any third-party CSS (Bootstrap, Foundation etc.) should go in the `css/vendor` directory.
+CSS files go in the `css` directory and any third-party CSS (Bootstrap, Foundation etc.) should be installed via bower.
