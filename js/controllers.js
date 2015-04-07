@@ -19,6 +19,8 @@ angular.module('historyBoard.controllers', [])
       })
       .success(function(reply, status, headers, config) {
         getThemes();
+        $scope.description = "";
+        $scope.title = "";
       });
     }
   }

@@ -42,8 +42,19 @@
   </p>
 </div>
 
-Add new theme:<br>
-Title:<input type="text" ng-model="title"></input><br>
-Description:<input type="text" ng-model="description"></input><br>
-<input type="button" ng-file-select ng-model="file" accept="image/*" value="Select cover image">
-<input type="button" ng-click="createTheme()" value="Create theme">
+<div style="padding-top: 20px">
+  Create New Theme:
+</div>
+<div>
+  <form name="subthemeForm" role="form" ng-submit="createTheme()" novalidate>
+    <div class="form-group">
+      <input type="text" ng-model="title" id="titleInput" class="form-control" placeholder="Theme Title" ng-minlength="3" ng-maxlength="128" required>
+    </div>
+        <div class="form-group">
+      <input type="text" ng-model="description" id="descInput" class="form-control" placeholder="Theme Description" ng-minlength="3" ng-maxlength="128" required>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-success" ng-disabled="subthemeForm.$invalid">Create Theme</button>
+    </div>
+  </form>
+</div>
