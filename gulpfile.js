@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
+var minifyHTML = require('gulp-minify-html');
 var sass = require('gulp-sass');
 var templateCache = require('gulp-angular-templatecache');
 var del = require('del');
@@ -23,6 +24,7 @@ gulp.task('styles', function() {
 
 gulp.task('templates', function() {
   return gulp.src('partials/**/*.html')
+  .pipe(minifyHTML({ empty: true }))
   .pipe(templateCache({ root: 'partials/', standalone: true }))
   .pipe(gulp.dest('tmp'));
 });
@@ -34,6 +36,8 @@ gulp.task('scripts', ['templates'], function() {
     'bower_components/angular-route/angular-route.js',
     'bower_components/angular-resource/angular-resource.js',
     'bower_components/ng-file-upload/angular-file-upload.js',
+    'bower_components/angular-cookie/angular-cookie.js',
+    'bower_components/ng-token-auth/dist/ng-token-auth.js',
     'js/**/*.js',
     'tmp/templates.js'
   ])
