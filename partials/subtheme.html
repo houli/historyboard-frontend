@@ -2,22 +2,16 @@
   Posts for subtheme: {{subtheme.title}}
 </div>
 
-<div>
-  <table id="themesTable" cellpadding=5>
-    <tbody>
-      <tr>
-        <td>Image</td>
-        <td>Post Title</td>
-        <td>Description</td>
-      </tr>
-      <tr ng-repeat="post in subtheme.posts" >
-        <td><a ng-href="/#/posts/{{post.id}}"><img width="200px" ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" class="img-thumbnail" /></a></td>
-        <td class="themeBlock">{{post.title}}</td>
-        <td class="themeBlock">{{post.description}}</td>
-        <td class="themeBlock">{{post.all_tags}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="posts" ng-repeat="post in subtheme.posts">
+  <div class="thumb">
+    <a ng-href="/#/posts/{{post.id}}"><img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}"/></a>
+  </div>
+  <div class="post_title">
+    <p>{{post.title}}</p>
+  </div>
+    <div class="post_info">
+  <p>{{post.user.first_name}} {{post.user.last_name}} - {{post.created_at | date:'MM/dd/yyyy'}}</p>
+  </div>
 </div>
 
 <div>

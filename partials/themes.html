@@ -50,8 +50,11 @@
     <div class="form-group">
       <input type="text" ng-model="title" id="titleInput" class="form-control" placeholder="Theme Title" ng-minlength="3" ng-maxlength="128" required>
     </div>
-        <div class="form-group">
+    <div class="form-group">
       <input type="text" ng-model="description" id="descInput" class="form-control" placeholder="Theme Description" ng-minlength="3" ng-maxlength="128" required>
+    </div>
+    <div>
+      <input type="file" ng-file-select ng-model="file" accept="image/*" value="Upload Image" required>
     </div>
     <div>
       <button type="submit" class="btn btn-success" ng-disabled="themeForm.$invalid">Create Theme</button>

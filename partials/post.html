@@ -26,7 +26,7 @@
       <div class="panel-body">
         <ul class="pager">
           <li><a href="#">{{comment.user.first_name}} {{comment.user.last_name}}</a></li>
-          <li><a href="#">{{comment.created_at}}</a></li>
+          <li><a href="#">{{comment.created_at | date:'MM/dd/yyyy'}}</a></li>
         </ul>
       </div>
       <div class="panel-footer">{{comment.body}}</div>
