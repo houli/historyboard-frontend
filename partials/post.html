@@ -1,69 +1,39 @@
-Title: {{post.title}}<br>
-Description: {{post.description}}<br>
-Tags: {{post.all_tags}}<br>
-<img ng-show="post.image.url" ng-src="http://localhost:3000{{post.image.url}}" class="img-thumbnail" /> <!--This may not need to be a thumbnail-->
-
-<br><br>
-Post New Comment:<br><input type="textarea" ng-model="body"></input>
-<input type="button" ng-click="createComment()" value="Post Comment">
-
-<br><br>
-Previous Comments:
-<ul>
-  <li ng-repeat="comment in post.comments">
-    Comment: id={{comment.id}}: {{comment.body}}
-  </li>  
-</ul>
-
 <div class="article_box">
-	<div class="description">
-		<h2>
-		This is my great grand pappy's tractor. I remember climbing about on it as a child.
-		</h2>
-	</div>
-	<img src="tractor.jpg">
-	<div class="description_head">
-	  <ul class="pager">
-	    <li><a href="#">John Doe</a></li>
-	    <li><a href="#">06/04/2015<span aria-hidden="true"></span></a></li>
-	    <li class="edit"><a href="#">Edit <span aria-hidden="true"></span></a></li>
-	    <li class="delete"><a href="#">Delete <span aria-hidden="true"></span></a></li>
-	  </ul>
-	</div>
+  <div class="description">
+    <h2>
+      This is my great grand pappy's tractor. I remember climbing about on it as a child.
+    </h2>
+  </div>
+  <img ng-src="http://localhost:3000{{post.image.url}}">
+  <div class="description_head">
+    <ul class="pager">
+      <li>{{post.user.first_name}} {{post.user.last_name}}</li>
+      <li>{{post.created_at}}<span aria-hidden="true"></span></a></li>
+      <li class="edit"><a href="#">Edit<span aria-hidden="true"></span></a></li>
+      <li class="delete"><a href="#">Delete<span aria-hidden="true"></span></a></li>
+    </ul>
+  </div>
 
-	<div class="input-group input-group-lg">
-	  <span class="input-group-addon" id="sizing-addon1">Comment</span>
-	  <input type="text" class="form-control" placeholder="Your text here" aria-describedby="sizing-addon1">
-	</div>
-
-	<div class="comment_box">
-		<div class="panel panel-info">
-		  <div class="panel-body">
-		    <ul class="pager">
-			    <li><a href="#">Mr. Arse</a></li>
-			    <li><a href="#">22.05 - 06/04/2015</a></li>
-		  </div>
-		  <div class="panel-footer">I think my grandfather also had this tractor. Great memories.</div>
-		</div>
-	</div>
-
-	<div class="comment_box">
-		<div class="panel panel-info">
-		  <div class="panel-body">
-		    <ul class="pager">
-			    <li><a href="#">Mr. Bum</a></li>
-			    <li><a href="#">22.05 - 06/04/2015</a></li>
-		  </div>
-		  <div class="panel-footer">I love the twin engines on this beast. I can plough 43 acres in an hour.</div>
-		</div>
-	</div>
-
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Comment</span>
+    <input type="text" class="form-control" placeholder="Your text here" aria-describedby="sizing-addon1">
+  </div>
+  <div class="comment_box" ng-repeat="comment in post.comments">
+    <div class="panel panel-info">
+      <div class="panel-body">
+        <ul class="pager">
+          <li><a href="#">{{comment.user.first_name}} {{comment.user.last_name</a></li>
+          <li><a href="#">{{comment.created_at}}</a></li>
+        </ul>
+      </div>
+      <div class="panel-footer">{{comment.body}}</div>
+    </div>
+  </div>
 </div>
 
 <div class="tag_box">
-	<h1>Related Content</h1>
-		<ul>
-			<button type="button" class="btn btn-default"><a href="#">Farming</button>
-		</ul>
-
+  <h1>Related Content</h1>
+  <ul ng-repeat="tag in post.all_tags">
+    <button type="button" class="btn btn-default"><a href="#">{{tag.name}}</button>
+  </ul>
 </div>
