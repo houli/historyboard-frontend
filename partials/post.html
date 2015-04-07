@@ -21,9 +21,9 @@
   <div class="comment_box" ng-repeat="comment in post.comments">
     <div class="panel panel-info">
       <div class="panel-body">
-        <ul class="pager">
-          <li><a href="#">{{comment.user.first_name}} {{comment.user.last_name</a></li>
-          <li><a href="#">{{comment.created_at}}</a></li>
+        <ul>
+        	<li><button type="button" class="btn btn-default">{{comment.user.first_name}} {{comment.user.last_name}}</button></li>
+        	<li><button type="button" class="btn btn-default">{{comment.created_at}}</button></li>
         </ul>
       </div>
       <div class="panel-footer">{{comment.body}}</div>
