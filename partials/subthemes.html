@@ -1,9 +1,22 @@
-<p>Displaying subthemes</p>
-<ul>
-  <li ng-repeat="subtheme in subthemes">
-    <a ng-href="/#/subthemes/{{subtheme.id}}">id: {{subtheme.id}}</a> title: {{subtheme.title}} description: {{subtheme.description}}
-  </li>
-</ul>
-<p>Add Subtheme:</p>
-Title:<input type="text" ng-model="title"></input>
-<input type="button" ng-click="createSubtheme()" value="Create subtheme">
+<div>All subthemes:</div>
+
+<div ng-repeat="subtheme in subthemes">
+    <a ng-href="/#/subthemes/{{subtheme.id}}">id: {{subtheme.id}}</a>
+    title: {{subtheme.title}} description: {{subtheme.description}}
+</div>
+<br>
+<div>
+  Post New Comment:
+</div>
+<div>
+  <form name="subthemeForm" role="form" ng-submit="createSubtheme()" novalidate>
+    <!-- !!!!!!!!!!! ADD THEME SELECT !!!!!!!!!!!!!! -->
+    <div class="form-group">
+      <label for="titleInput">Title:</label>
+      <input type="text" ng-model="title" id="titleInput" class="form-control" placeholder="Enter Title:" ng-minlength="3" ng-maxlength="128" required>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-success" ng-disabled="subthemeForm.$invalid">Create Subtheme</button>
+    </div>
+  </form>
+</div>
