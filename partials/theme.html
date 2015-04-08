@@ -1,9 +1,8 @@
 <div>Displaying theme: {{theme.title}}</div>
-<div>Subthemes for theme: {{theme.id}}</div>
+<div>Subthemes for {{theme.title}}:</div>
 
 <div ng-repeat="subtheme in theme.subthemes">
-    <a ng-href="/#/subthemes/{{subtheme.id}}">id: {{subtheme.id}}</a>
-    title: {{subtheme.title}}
+    <a ng-href="/#/subthemes/{{subtheme.id}}">{{subtheme.title}}</a>
 </div>
 <br>
 <div>
@@ -12,7 +11,6 @@
 <div>
   <form name="subthemeForm" role="form" ng-submit="createSubtheme()" novalidate>
     <div class="form-group">
-<!--       <label for="titleInput">Subtheme Title:</label> -->
       <input type="text" ng-model="title" id="titleInput" class="form-control" placeholder="Subtheme Title" ng-minlength="3" ng-maxlength="128" required>
     </div>
     <div>

@@ -7,7 +7,7 @@
   <div class="description_head">
     <ul class="pager">
       <li><a href="#">{{post.user.first_name}} {{post.user.last_name}}<span aria-hidden="true"></span></a></li>
-      <li><a href="#">{{post.created_at}}<span aria-hidden="true"></span></a></li>
+      <li><a href="#">{{post.created_at | date:'MM/dd/yyyy'}}<span aria-hidden="true"></span></a></li>
       <li class="edit"><a href="#">Edit<span aria-hidden="true"></span></a></li>
       <li class="delete"><a href="#">Delete<span aria-hidden="true"></span></a></li>
     </ul>
