@@ -157,7 +157,7 @@ angular.module('historyBoard.controllers', [])
     });
   };
 }])
-.controller('LoginController', ['$scope', '$auth', function($scope, $auth) {
+.controller('LoginController', ['$scope', '$auth', '$location', function($scope, $auth, $location) {
   $scope.login = function(user) {
     $auth.submitLogin(user)
     .then(function(resp) {
