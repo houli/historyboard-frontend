@@ -41,7 +41,9 @@ angular.module('historyBoard.controllers', [])
     $scope.title = "";
   };
 }])
-.controller ('SubthemesController', ['$scope', 'Subtheme', function($scope, Subtheme) {
+.controller ('SubthemesController', ['$scope', 'Subtheme', 'Theme', function($scope, Subtheme, Theme) {
+  $scope.theme_sel = null;
+  $scope.themes = Theme.query();
 
   var getSubthemes = function() {
     $scope.subthemes = Subtheme.query();
@@ -51,10 +53,10 @@ angular.module('historyBoard.controllers', [])
     var newSub = new Subtheme({
       subtheme: {
         title: $scope.title,
-        theme_id: $scope.theme.id
+        theme_id: $scope.theme_sel
       }
     });
-    $scope.theme.subthemes.push(newSub);
+    $scope.subthemes.push(newSub);
     newSub.$save();
     $scope.title = "";
   };
