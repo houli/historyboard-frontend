@@ -167,11 +167,18 @@ angular.module('historyBoard.controllers', [])
       // handle error response
     });
   };
+  if ($scope.user.signedIn) {
+    $location.path('/');
+  }
 }])
 .controller('MainController', ['$scope', '$auth', '$location', function($scope, $auth, $location) {
   $auth.validateUser();
 
   $scope.$on('auth:email-confirmation-success', function(ev, user) {
+    $location.path('/');
+  });
+
+  $scope.$on('auth:logout-success', function(ev) {
     $location.path('/');
   });
 }]);

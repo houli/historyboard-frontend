@@ -1,13 +1,11 @@
 <div>All subthemes:</div>
 
 <div ng-repeat="subtheme in subthemes">
-    <a ng-href="/#/subthemes/{{subtheme.id}}">{{subtheme.title}}</a>
+  <a ng-href="/#/subthemes/{{subtheme.id}}">{{subtheme.title}}</a>
 </div>
 <br>
-<div>
-  Post New Comment:
-</div>
-<div>
+<div ng-show="user.signedIn && user.admin">
+  Post New Subtheme:
   <form name="subthemeForm" role="form" ng-submit="createSubtheme()" novalidate>
     <div class="form-group">
       <label for="themeInput">Theme:</label>

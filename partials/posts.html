@@ -14,11 +14,8 @@
   </div>
 </div>
 
-
-<div>
+<div ng-show="user.signedIn">
   Create New Post:
-</div>
-<div>
   <form name="postForm" role="form" ng-submit="createPost()" novalidate>
     <div>
       <!-- http://silviomoreto.github.io/bootstrap-select/ -->
