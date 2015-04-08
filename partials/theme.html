@@ -5,10 +5,8 @@
     <a ng-href="/#/subthemes/{{subtheme.id}}">{{subtheme.title}}</a>
 </div>
 <br>
-<div>
+<div ng-show="user.signedIn && user.admin">
   Create New Subtheme:
-</div>
-<div>
   <form name="subthemeForm" role="form" ng-submit="createSubtheme()" novalidate>
     <div class="form-group">
       <input type="text" ng-model="title" id="titleInput" class="form-control" placeholder="Subtheme Title" ng-minlength="3" ng-maxlength="128" required>
